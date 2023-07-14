@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User authenticate</title>
+    <style>
+    body {
+      background: linear-gradient(to bottom right, #ff69b4, #00bfff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-label {
+      width: 400px;
+      height: 70px;
+      border: none;
+      border-radius: 20px;
+      padding: 5px;
+      background-color: #fff;
+    }
+
+    .site-info {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .site-info h1 {
+      font-size: 30px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .login-button,
+    .register-button,
+    .submit-button {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 30px;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-button{
+        padding: 15px 30px;
+        font-size: 20px;
+        background-color: #d45a97;
+    }
+
+    .register-button{
+        padding: 15px 30px;
+        font-size: 20px;
+        background-color: #00bfff;
+    }
+
+    .submit-button {
+        padding: 15px 30px;
+        font-size: 15px;
+        background-color: #d45a97;
+    }
+
+
+    .profile-button,
+    .back-button,
+    .logout-button {
+        position: fixed;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #d45a97;
+        color: #fff;
+        border-radius: 25px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .profile-button{
+        top: 10px;
+        right: 10px;
+    }
+
+    .back-button {
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .logout-button {
+        top: 10px;
+        left: 10px;
+
+    }
+
+    .login-button:hover,
+    .profile-button:hover,
+    .logout-button:hover,
+    .back-button:hover,
+    .submit-button:hover {
+        background-color: #ff3381;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .register-button:hover {
+        background-color: #33d6ff;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    @media (min-width: 501px) {
+        .form-label {
+            width: 300px;
+        }
+
+        .play-button {
+            font-size: 18px;
+            padding: 16px 32px;
+        }
+
+        .register {
+            font-size: 20px;
+        }
+    }
+
+    @media (min-width: 201px) and (max-width: 500px) {
+        .form-label {
+            width: 80%;
+            max-width: 250px;
+        }
+
+        .register {
+            font-size: 15px;
+        }
+    }
+    </style>
+</head>
+<body class="container">
+
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

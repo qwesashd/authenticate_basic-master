@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+    .play-button {
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, text-decoration 0.3s ease, color 0.3s ease;
+        padding: 17px 35px;
+        background-image: linear-gradient(-45deg, #00ff00, #008000, #00ff00);
+        background-size: 400% 400%;
+        animation: gradientAnimation 5s linear infinite;
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .play-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        color: #fff;
+    }
+    </style>
+
+    {% if user.is_authenticated %}
+        <div class="site-info">
+            <h1>Платформа с развивающими играми</h1>
+            <p>Добро пожаловать! Здесь вы найдете множество интересных игр для развития навыков и обучения.</p>
+        </div>
+
+        <a class="logout-button" href="{% url 'logout' %}">Выйти</a><br>
+        <a class="play-button" href="{% url 'choose' %}">Играть</a><br>
+        <a class="profile-button" href="{% url 'profile' %}">Профиль</a>
+
+    {% else %}
+        <div class="site-info">
+            <h1>Платформа с развивающими играми</h1>
+            <p>Добро пожаловать! Здесь вы найдете множество интересных игр для развития навыков и обучения.</p>
+            <p>Чтобы начать играть, необходимо войти или зарегистрироваться :)</p>
+        </div>
+
+        <a class="login-button form-label" href="{% url 'login' %}">Войти</a>
+        <a class="register-button form-label" href="{% url 'register' %}">Зарегистрироваться</a>
+    {% endif %}
+{% endblock %}
