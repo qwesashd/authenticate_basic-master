@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
+    <title>Игры для детей</title>
+
     <style>
         body {
             background: linear-gradient(to bottom right, #ff69b4, #00bfff);
@@ -46,7 +50,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
     <br><br><p1>Задание №4(id 4). Сложность Средняя</p1><br>
     <p1>Раздели на группы</p1>
@@ -57,7 +61,7 @@
         <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
 
     <br><br><p1>Задание №5(id 5). Сложность Высокая </p1><br>
@@ -69,7 +73,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
     <br>
     <br>
@@ -84,7 +88,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
     <br><br><p1>Задание №2(id 7). Сложность Простая </p1><br>
     <p1>Табличное умножение и деление</p1>
@@ -95,7 +99,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
     <br><br><p1>Задание №3(id 8). Сложность Средняя</p1><br>
     <p1>Табличное деление с остатком</p1>
@@ -120,7 +124,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
 
 
@@ -133,7 +137,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
 
      <br>
@@ -149,7 +153,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
 
 
@@ -162,7 +166,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
     <br><br><p1>Задание №3(id 13). Сложность Средняя </p1><br>
     <p1>Растения и животные природных зон</p1>
@@ -173,7 +177,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
     <br><br><p1>Задание №4(id 14). Сложность Средняя</p1><br>
     <p1>Материки и океаны</p1>
@@ -184,7 +188,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
     <br><br><p1>Задание №5(id 15). Сложность Высокая </p1><br>
     <p1>Равнины и горы</p1>
@@ -195,7 +199,7 @@
     <form action="{% url 'children' %}" method="post">
             {% csrf_token %}
             {{ form }}
-        <button type="submit">отправить результат</button>
+        <button class="submit-button" type="submit">отправить результат</button>
         </form>
 
 
