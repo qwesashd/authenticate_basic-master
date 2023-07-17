@@ -1,24 +1,44 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Форма обратной связи</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+{% extends 'base.html' %}
 
-<form name="form" action="mail.php" method="post" id="form_message">
-    <h2>Форма обратной связи.</h2>
-    <p> <div class="titles">Ваше имя*</div> <input class="input" name="name" type="text"/> </p>
+{% block content %}
+    <style>
+    /* Стили для центрирования формы */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Это обеспечит вертикальное центрирование */
+    }
 
-    <p> <div class="titles">Электронная почта*</div> <input class="input" name="email" type="text"/> </p>
+    #form_message {
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
-    <p> <div class="titles">Тема сообщения</div> <input class="input" name="subjects" type="text"/> </p>
+    .titles {
+        font-weight: bold;
+    }
 
-    <p> <div class="titles">Текст сообщения:</div><textarea name="message" cols="22" rows="5" /></textarea></p>
-<!--     <p><input id="submit" value="Отправить" type="submit" /></p>-->
-    <a href="{% url 'send' %}" class="submit">Отправить</a>
-</form>
-</body>
-</html>
+    .input,
+    textarea {
+        width: 100%;
+        padding: 5px;
+    }
+
+    textarea {
+        resize: vertical; /* Разрешить вертикальное изменение размера текстового поля */
+    }
+    </style>
+    <form name="form" action="mail.php" method="post" id="form_message">
+        <h1>Форма обратной связи</h1>
+        <p><div class="titles">Ваше имя*</div> <input class="input" name="name" type="text"/></p>
+        <p><div class="titles">Электронная почта*</div> <input class="input" name="email" type="text"/></p>
+        <p><div class="titles">Тема сообщения</div> <input class="input" name="subjects" type="text"/></p>
+        <p><div class="titles">Текст сообщения:</div><textarea name="message" cols="22" rows="5"></textarea></p>
+    </form>
+    <a class="submit-button" href="{% url 'send' %}">Отправить</a>
+
+{% endblock %}

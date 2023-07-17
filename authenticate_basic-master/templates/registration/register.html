@@ -8,6 +8,7 @@
     <form class="register" action="{% url 'register' %}" method="post">
         {{ form }}
         {% csrf_token %}
-    <button type="submit" class="submit-button">Отправить</button>
+        <button type="submit" class="submit-button">Зарегистрироваться</button>
     </form>
+    <a class="back-button" href="{% url 'home' %}">Главная</a>
 {% endblock %}

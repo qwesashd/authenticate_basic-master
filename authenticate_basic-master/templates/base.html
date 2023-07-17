@@ -8,76 +8,86 @@
 
     <style>
     body {
-      background: linear-gradient(to bottom right, #ff69b4, #00bfff);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #ff69b4, #00bfff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
     }
 
     .form-label {
-      width: 400px;
-      height: 70px;
-      border: none;
-      border-radius: 20px;
-      padding: 5px;
-      background-color: #fff;
+        width: 400px;
+        height: 70px;
+        border: none;
+        border-radius: 20px;
+        padding: 5px;
+        background-color: #fff;
     }
 
     .site-info {
-      font-size: 20px;
-      text-align: center;
-      margin-bottom: 5px;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 5px;
     }
 
     .site-info h1 {
-      font-size: 30px;
-      color: #fff;
-      margin-bottom: 30px;
+        font-size: 30px;
+        color: #fff;
+        margin-bottom: 30px;
     }
 
     .login-button,
-    .register-button,
-    .submit-button {
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      border-radius: 30px;
-      margin: 10px;
-      transition: background-color 0.3s ease;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .login-button{
+    .register-button {
+        display: inline-block;
+        text-align: center;
         padding: 15px 30px;
         font-size: 20px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 30px;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-button,
+    .submit-button {
         background-color: #d45a97;
     }
 
-    .register-button{
-        padding: 15px 30px;
-        font-size: 20px;
+    .register-button {
         background-color: #00bfff;
     }
 
     .submit-button {
-        padding: 15px 30px;
-        font-size: 15px;
-        background-color: #d45a97;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 30px;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
-
 
     .profile-button,
     .back-button,
-    .logout-button {
+    .logout-button,
+    .support-button {
         position: fixed;
         font-size: 18px;
         text-align: center;
@@ -105,11 +115,17 @@
 
     }
 
+    .support-button {
+        bottom: 10px;
+        right: 10px;
+    }
+
     .login-button:hover,
     .profile-button:hover,
     .logout-button:hover,
     .back-button:hover,
-    .submit-button:hover {
+    .submit-button:hover,
+    .support-button:hover {
         background-color: #ff3381;
         text-decoration: none;
         color: #fff;
@@ -119,6 +135,11 @@
         background-color: #33d6ff;
         text-decoration: none;
         color: #fff;
+    }
+
+    .game{
+        width:100%;
+        height:500px;
     }
 
     @media (min-width: 501px) {
@@ -134,6 +155,7 @@
         .register {
             font-size: 20px;
         }
+
     }
 
     @media (min-width: 201px) and (max-width: 500px) {
@@ -145,11 +167,16 @@
         .register {
             font-size: 15px;
         }
+
+        .game{
+            width: 80%;
+            max-width: 500px;
+        }
     }
     </style>
 </head>
-<body class="container">
 
+<body class="container">
 
 {% block content %}
 {% endblock %}

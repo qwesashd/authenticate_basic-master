@@ -1,134 +1,70 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Категории возраста</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #ff69b4, #00bfff);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+{% extends 'base.html' %}
 
-    .form-label {
-      width: 400px;
-      height: 60px;
-      border: none;
-      border-radius: 20px;
-      padding: 5px;
-      background-color: #fff;
-    }
+{% block content %}
 
+    <style>
     .childrens-games-button,
     .teen-games-button {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 18px;
-      text-align: center;
-      text-decoration: none;
-      background-color: #d45a97;
-      color: #fff;
-      border-radius: 30px;
-      margin: 10px;
-      transition: background-color 0.3s ease;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #d45a97;
+        color: #fff;
+        border-radius: 30px;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
-    .back-button,
-    .support-button,
-    .login-button {
-      display: inline-block;
-      position: fixed;
-      padding: 8px 17px;
-      font-size: 15px;
-      text-align: center;
-      text-decoration: none;
-      background-color: #d45a97;
-      color: #fff;
-      border-radius: 25px;
-      transition: background-color 0.3s ease;
-      border: none;
-      cursor: pointer;
+    .play-button {
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, text-decoration 0.3s ease, color 0.3s ease;
+        padding: 17px 35px;
+        background-image: linear-gradient(-45deg, #00ff00, #008000, #00ff00);
+        background-size: 400% 400%;
+        animation: gradientAnimation 5s linear infinite;
     }
 
-    .back-button,
-    .support-button {
-      width: 120px;
-    }
+    .play-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        color: #fff;
 
-    .back-button {
-      bottom: 10px;
-      left: 10px;
-    }
-
-    .support-button {
-      bottom: 10px;
-      right: 10px;
-    }
-
-    .login-button {
-      top: 10px;
-      right: 10px;
-    }
-
-    .login-button:hover,
     .childrens-games-button:hover,
-    .teen-games-button:hover,
-    .back-button:hover,
-    .support-button:hover {
-      background-color: #ff3381;
-      text-decoration: none;
-      color: #fff;
+    .teen-games-button:hover {
+        background-color: #ff3381;
+        text-decoration: none;
+        color: #fff;
     }
+    </style>
 
-    .login-button:focus,
-    .childrens-games-button:focus,
-    .teen-games-button:focus,
-    .back-button:focus,
-    .support-button:focus {
-      outline: none;
-    }
+    <div class="class-container">
+        <form class="class-form" action="#" method="post">
+            <a href="{% url 'children' %}" class="childrens-games-button form-label">Игры для детей</a>
+            <a href="{% url 'teen' %}" class="teen-games-button form-label">Игры для  подростков</a>
 
-    @media (max-width: 576px) {
-      .back-button,
-      .support-button,
-      .login-button {
-        font-size: 13px;
-        width: 30%
-      }
+        </form>
+    </div>
+    <br><br>
+    <a class="play-button" href="{% url 'disk' %}">Как играть?</a><br>
 
-      .form-label {
-      width: 80%;
-      height: 80%;
-      max-width: 200px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <a href="profile" class="login-button">Профиль</a>
-  <div class="class-container">
-    <form class="class-form" action="#" method="post">
+    <a class="profile-button" href="{% url 'profile' %}">Профиль</a>
+    <a class="back-button" href="{% url 'home' %}">Главная</a>
+    <a class="support-button" href="{% url 'support' %}">Поддержка</a>
 
-        <a href="{% url 'children' %}" class="childrens-games-button form-label">Игры для детей</a>
-        <a href="{% url 'teen' %}" class="teen-games-button form-label">Игры для  подростков</a>
-
-    </form>
-  </div>
-  <div class="other-button">
-      <form class="other-button-form" action="#" method="post">
-        <a href="{% url 'home' %}" class="back-button">На главную</a>
-          <a href="support" class="support-button">Поддержка</a>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}

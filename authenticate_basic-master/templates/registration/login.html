@@ -1,10 +1,20 @@
 
+
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+    .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    </style>
+
     <h1>Вход</h1>
     <hr>
-
     {% if form.errors %}
         <p>{{ form.errors.error }}</p>
     {% endif %}
@@ -12,8 +22,9 @@
     <form action="{% url 'login' %}" method="post">
         {{ form }}
         {% csrf_token %}
-        <button type="submit" class="submit-button">Отправить</button>
+        <button type="submit" class="submit-button">Войти</button>
     </form>
 
-    <a href="{% url 'password_reset' %}">Забыли пароль?</a>
+    <a class="back-button" href="{% url 'home' %}">Главная</a>
+    <a class="section-title" href="{% url 'password_reset' %}">Забыли пароль?</a>
 {% endblock %}

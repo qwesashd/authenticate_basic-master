@@ -1,10 +1,7 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
-
-
-    <title>Игры для детей</title>
-
     <style>
         body {
             background: linear-gradient(to bottom right, #ff69b4, #00bfff);
@@ -16,192 +13,177 @@
             font-family: Arial, sans-serif;
         }
     </style>
+
     <h1>Логические игры</h1>
-
-    <br><p1>Задание №1(id 1). Сложность Простая</p1><br>
-    <p1>Найди пару</p1>
-
     <br>
+    <h3>Задание №1(id 1). Найди пару</h3>
+    <h4>Сложность: простая</h4>
     <br>
-
-      <iframe src="https://learningapps.org/watch?app=15821141" style="border:100px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-        <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-        <br><br><p1>Задание №2(id 2). Сложность Простая</p1><br>
-    <p1>Что чем едят?</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=4883643" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-        <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br><br><p1>Задание №3(id 3). Сложность Средняя</p1><br>
-    <p1>Духовные и материальные ценности</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=16219402" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=15821141" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br><br><p1>Задание №4(id 4). Сложность Средняя</p1><br>
-    <p1>Раздели на группы</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=14382557" style="border:0px;width:width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-        <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-
-    <br><br><p1>Задание №5(id 5). Сложность Высокая </p1><br>
-    <p1>Лотерея памяти</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=19460021" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-    <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br>
-    <br>
-    <b>Арифметически игры</b>
-
-    <br><br><p1>Задание №1(id 6). Сложность Простая</p1><br>
-    <p1>Задачи на движение</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=6134703" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-    <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br><br><p1>Задание №2(id 7). Сложность Простая </p1><br>
-    <p1>Табличное умножение и деление</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=15814210" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-    <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br><br><p1>Задание №3(id 8). Сложность Средняя</p1><br>
-    <p1>Табличное деление с остатком</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=14234300" style="border:100px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-    <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-
-        <button class="submit-button" type="submit">отправить результат</button>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
     </form>
-    <br>
-    <br>
-    <p1>Задание №4(id 9). Сложность Средняя</p1><br>
-    <p1>Задачи на нахождение периметра фигур</p1>
 
+    <br><br>
+    <h3>Задание №2(id 2). Что чем едят?</h3>
+    <h4>Сложность: простая</h4>
     <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=25876729" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=4883643" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
-
-<br><br><p1>Задание №5(id 10). Сложность Высокая </p1><br>
-    <p1>выбери остаток</p1>
-
+    <br><br>
+    <h3>Задание №3(id 3). Духовные и материальные ценности</h3>
+    <h4>Сложность: средняя</h4>
     <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=3062834" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=16219402" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
-     <br>
+    <br><br>
+    <h3>Задание №4(id 4). Раздели на группы</h3>
+    <h4>Сложность: средняя</h4>
     <br>
-    <b>География</b>
-
-<br><br><p1>Задание №1(id 11). Сложность Простая </p1><br>
-    <p1>Страны и столицы Европы</p1>
-
-    <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=51805" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=14382557" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
-
-<br><br><p1>Задание №2(id 12). Сложность Простая </p1><br>
-    <p1>Страны мира</p1>
-
+    <br><br>
+    <h3>Задание №5(id 5). Лотерея памяти</h3>
+    <h4>Сложность: высокая</h4>
     <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=402156" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=19460021" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br><br><p1>Задание №3(id 13). Сложность Средняя </p1><br>
-    <p1>Растения и животные природных зон</p1>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
+    <br><br>
+    <h1>Арифметически игры</h1>
     <br>
+    <h3>Задание №1(id 6). Задачи на движение</h3>
+    <h4>Сложность: простая</h4>
     <br>
-    <iframe src="https://learningapps.org/watch?app=665508" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=6134703" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br><br><p1>Задание №4(id 14). Сложность Средняя</p1><br>
-    <p1>Материки и океаны</p1>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
+    <br><br>
+    <h3>Задание №2(id 7). Табличное умножение и деление</h3>
+    <h4>Сложность: простая</h4>
     <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=17629" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=15814210" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
-    <br><br><p1>Задание №5(id 15). Сложность Высокая </p1><br>
-    <p1>Равнины и горы</p1>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
+    <br><br>
+    <h3>Задание №3(id 8). Табличное деление с остатком</h3>
+    <h4>Сложность: средняя</h4>
     <br>
-    <br>
-    <iframe src="https://learningapps.org/watch?app=2748531" style="border:0px;width:1000px;height:600px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <iframe class="game" src="https://learningapps.org/watch?app=14234300" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
     <form action="{% url 'children' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-        <button class="submit-button" type="submit">отправить результат</button>
-        </form>
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
+    <br><br>
+    <h3>Задание №4(id 9). Задачи на нахождение периметра фигур</h3>
+    <h4>Сложность: средняя</h4>
+    <br>
+    <iframe class="game" src="https://learningapps.org/watch?app=25876729" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <form action="{% url 'children' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
+
+    <br><br>
+    <h3>Задание №5(id 10). Выбери остаток </h3>
+    <h4>Сложность: высокая</h4>
+    <br>
+    <iframe class="game" src="https://learningapps.org/watch?app=3062834" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <form action="{% url 'children' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
+
+    <br><br>
+    <h1>География</h1>
+    <br>
+    <h3>Задание №1(id 11). Страны и столицы Европы </h3>
+    <h4>Сложность: простая</h4>
+    <br>
+    <iframe class="game" src="https://learningapps.org/watch?app=51805" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <form action="{% url 'children' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
+
+
+    <br><br>
+    <h3>Задание №2(id 12). Страны мира</h3>
+    <h4>Сложность: простая</h4>
+    <br>
+    <iframe class="game" src="https://learningapps.org/watch?app=402156" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <form action="{% url 'children' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
+
+    <br><br>
+    <h3>Задание №3(id 13). Растения и животные природных зон</h3>
+    <h4>Сложность: средняя</h4>
+    <br>
+    <iframe class="game" src="https://learningapps.org/watch?app=665508" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <form action="{% url 'children' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
+
+    <br><br>
+    <h3>Задание №4(id 14). Материки и океаны</h3>
+    <h4>Сложность: средняя</h4>
+    <br>
+    <iframe class="game" src="https://learningapps.org/watch?app=17629" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <form action="{% url 'children' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
+
+    <br><br>
+    <h3>Задание №5(id 15). Равнины и горы</h3>
+    <h4>Сложность: высокая</h4>
+    <br>
+    <iframe class="game" src="https://learningapps.org/watch?app=2748531" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+    <form action="{% url 'children' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="submit-button" type="submit">отправить</button>
+    </form>
 
     <a class="back-button" href="{% url 'home' %}">Главная</a>
 

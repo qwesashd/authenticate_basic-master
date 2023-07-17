@@ -11,4 +11,5 @@ urlpatterns = [
     path('send', views.send, name='send'),
     path('choose', views.choose, name='choose'),
     path('teen', views.teen, name='teen'),
+    path('disk', views.disk, name='disk'),
 ]

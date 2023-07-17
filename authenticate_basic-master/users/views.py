@@ -90,3 +90,6 @@ def send(request):
 def choose(request):
     return render(request, 'choose.html')
 
+def disk(request):
+    return render(request, 'disk.html')
+

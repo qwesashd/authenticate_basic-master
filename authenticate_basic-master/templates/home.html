@@ -46,7 +46,9 @@
 
         <a class="logout-button" href="{% url 'logout' %}">Выйти</a><br>
         <a class="play-button" href="{% url 'choose' %}">Играть</a><br>
+
         <a class="profile-button" href="{% url 'profile' %}">Профиль</a>
+        <a class="support-button" href="{% url 'support' %}">Поддержка</a>
 
     {% else %}
         <div class="site-info">
@@ -58,4 +60,5 @@
         <a class="login-button form-label" href="{% url 'login' %}">Войти</a>
         <a class="register-button form-label" href="{% url 'register' %}">Зарегистрироваться</a>
     {% endif %}
+
 {% endblock %}
