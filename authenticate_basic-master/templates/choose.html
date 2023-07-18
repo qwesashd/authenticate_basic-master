@@ -4,8 +4,7 @@
 {% block content %}
 
     <style>
-    .childrens-games-button,
-    .teen-games-button {
+    .children-games-button {
         display: inline-block;
         padding: 15px 30px;
         font-size: 18px;
@@ -23,7 +22,11 @@
         align-items: center;
         justify-content: center;
     }
-
+     a.children-games-button:hover{
+         background-color: #ff3381;
+         text-decoration: none;
+         color: #fff;
+     }
     .play-button {
         font-size: 20px;
         text-align: center;
@@ -45,18 +48,12 @@
         text-decoration: none;
         color: #fff;
 
-    .childrens-games-button:hover,
-    .teen-games-button:hover {
-        background-color: #ff3381;
-        text-decoration: none;
-        color: #fff;
-    }
     </style>
 
     <div class="class-container">
-        <form class="class-form" action="#" method="post">
-            <a href="{% url 'children' %}" class="childrens-games-button form-label">Игры для детей</a>
-            <a href="{% url 'teen' %}" class="teen-games-button form-label">Игры для  подростков</a>
+        <form class="class-form choose" action="#" method="post">
+            <a href="{% url 'children' %}" class="children-games-button form-label test">Игры для детей</a>
+            <a href="{% url 'teen' %}" class="children-games-button form-label">Игры для  подростков</a>
 
         </form>
     </div>

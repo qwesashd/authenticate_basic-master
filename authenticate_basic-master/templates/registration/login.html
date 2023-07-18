@@ -19,12 +19,12 @@
         <p>{{ form.errors.error }}</p>
     {% endif %}
 
-    <form action="{% url 'login' %}" method="post">
+    <form action="{% url 'login' %}" method="post" class="login-form">
         {{ form }}
         {% csrf_token %}
         <button type="submit" class="submit-button">Войти</button>
     </form>
 
     <a class="back-button" href="{% url 'home' %}">Главная</a>
-    <a class="section-title" href="{% url 'password_reset' %}">Забыли пароль?</a>
+    <a style="font-size: 15px" class="section-title forget-password" href="{% url 'password_reset' %}">Забыли пароль?</a>
 {% endblock %}
