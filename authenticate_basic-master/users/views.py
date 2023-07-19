@@ -1,12 +1,27 @@
 from django.contrib.auth import authenticate, login
 from django.views import View
 from django.shortcuts import render, redirect
-from .models import Task
-from users.forms import UserCreationForm, MyForm
+from .models import Task, Support
+from users.forms import UserCreationForm, MyForm, SupportForm
 from users import forms
 
 
 
+def support(request):
+    user = request.user
+    if request.method == 'POST':
+        form = SupportForm(request.POST)
+        support = Support()
+        if form.is_valid():
+            text = form.cleaned_data['text']
+            support.nickname = user.username
+            support.email = user.email
+            support.text = text
+            support.save()
+            return redirect('support')
+    else:
+        form = SupportForm()
+    return render(request, 'support.html', {'form': form, 'nickname': user.username, 'email': user.email})
 
 
 class Register(View):
@@ -26,7 +41,6 @@ class Register(View):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
-
             return redirect('home')
         context = {
             'form': form,
@@ -43,7 +57,7 @@ def children(request):
             task.nickname = user.username
             task.task_complited = name
             task.save()
-            return redirect('children')  # Замените 'success' на имя нужного URL-шаблона
+            return redirect('children')
     else:
         form = MyForm()
     return render(request, 'registration/children.html', {'form': form})
@@ -58,7 +72,7 @@ def teen(request):
             task.nickname = user.username
             task.task_complited = name
             task.save()
-            return redirect('teen')  # Замените 'success' на имя нужного URL-шаблона
+            return redirect('teen')
     else:
         form = MyForm()
     return render(request, 'registration/teen.html', {'form': form})
@@ -81,8 +95,7 @@ def Profile(request):
     return render(request,'registration/profile.html', {'nickname': nickname, 'percent_child': percent_child, 'percent_teenage':percent_teenage, 'list_task_teenage':list_task_teenage,'list_task_child':list_task_child})
 
 
-def support(request):
-    return render(request, 'support.html')
+
 
 def send(request):
     return render(request, 'send.html')
