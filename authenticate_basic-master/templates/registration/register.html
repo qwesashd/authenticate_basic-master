@@ -1,9 +1,16 @@
 
+
 {% extends 'base.html' %}
 
 {% block content %}
     <h1>Регистрация</h1>
-    <hr>
+
+    <h5 style="text-align: center">Примечание:</h5>
+    <h5>Пароль не должен быть слишком похож на другую вашу личную информация<br>
+        Пароль должен содержать не менее 8 символов<br>
+        Пароль не может быть полностью цифровым
+    </h5>
+
 
     <form class="register" action="{% url 'register' %}" method="post">
         {{ form }}
