@@ -17,7 +17,7 @@ class SupportForm(forms.Form):
     def clean_text(self):
         data = self.cleaned_data['text']
         if len(data) < 25:
-            raise ValidationError("Минимальное количество символов - 10.")
+            raise ValidationError("Минимальное количество символов - 25.")
 
         if len(data) > 500:
             raise ValidationError("Максимальное количество символов - 500.")

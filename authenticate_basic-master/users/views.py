@@ -18,7 +18,7 @@ def support(request):
             support.email = user.email
             support.text = text
             support.save()
-            return redirect('support')
+            return redirect('send')
     else:
         form = SupportForm()
     return render(request, 'support.html', {'form': form, 'nickname': user.username, 'email': user.email})
